@@ -40,6 +40,8 @@ Here git is showing us both 'lines' and letting us compare. HEAD represents the 
 
 when we're presented with the above we need to make a decision on what piece of code we pick. In this scenario we'll require some further work done in order to 'merge' both file `test.blade.php` and `different.blade.php` however! We won't be doing this work whilst we're rebasing! Because you're now changing the history of our tree! It's best when rebasing to only alter the code that is conflicting to resolve the conflict. Then later on work on resolving issues that have arose from rebasing. In this example that would be 'merging' the 2 resourve view files. 
 
+> Please don't commit the `>>>>` and `====` I will murder you!
+
 ### The power of git show 
 
 To help us with conflicts we can run `git show {git_hash}` to see what the developer did at that point. So for example running `git show dsfggfdhhj45656hdfgierg` would show us what the developer committed.
