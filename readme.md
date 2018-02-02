@@ -198,7 +198,7 @@ git pull
 git stash apply
 ```
 
-[alt git stash](https://cms-assets.tutsplus.com/uploads/users/585/posts/22988/image/git-stash-stashing-changes.png)
+![alt git stash](https://cms-assets.tutsplus.com/uploads/users/585/posts/22988/image/git-stash-stashing-changes.png)
 
 ## Rebasing vs merging
 
