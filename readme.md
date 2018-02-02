@@ -197,3 +197,21 @@ git stash apply
 ```
 
 [alt git stash](https://cms-assets.tutsplus.com/uploads/users/585/posts/22988/image/git-stash-stashing-changes.png)
+
+## Rebasing vs merging
+
+As always there's a time and a place for everything. Essentially the difference is rebasing changes your history in order to make a nice neat tree. With merging we're merging our history BUT not altering the tree.
+
+Rebasing makes a nice neat line of commits. It's easier to read in tig that I keep banging on about, it's easier to see the history etc. I am a bit biased because when using merge in an environment of 30 devs a lot of my work disappeared when a developer would merge my work in with the rest and their commits were favoured over mine: hence my work didn't 'work' and I got blamed for it. I see merging like SVN merging. SVN is like once branch and one branch only. If someone edits the same file as you, when merging you can only pick one version. so code can go walkies and you're left there scratching your head as to where your work went. 
+
+# HELPS MEH I IZ CONFUZED
+
+It's cool, git is a confusing concept to get your head around. I see git as the 4th and 5th dimension which I think blew @skinnymikeofdoom 's mind!
+
+Another way of looking at it is like a tree. As we code the tree grows! 
+
+![alt git tree](https://www.drupal.org/files/repositorydiagram.png)
+
+## Git terminology 
+
+https://git-scm.com/docs/gitglossary
