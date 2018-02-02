@@ -94,6 +94,8 @@ Git diff can be used in many ways and is incredibly powerful! Below we will look
 
 ## What is staging? 
 
+![alt git stages](https://git-scm.com/figures/18333fig0201-tn.png)
+
 With git there's almost like a state for each change you make when you're working. Notice I said change and not file! 
 
 When adding new files to the project, git will mark these as 'untracked' in other words untracked files/changes. Which is pretty self explanatory; the file is not in git. Which is correct because it's a completely new file! 
@@ -122,7 +124,7 @@ So we want to commit these files differently and to do that we can use `git add`
 
 `git add readme.md`
 
-BOOM DONE! The readme is now staged! And we can see this in our git status
+BOOM! DONE! The readme is now staged! And we can see this in our git status
 
 ```bash
 On branch master
@@ -160,6 +162,38 @@ Your local is your computer, you is developers, you is the working node in a sen
 
 ![alt git flow](https://www.git-tower.com/learn/content/01-git/01-ebook/en/01-command-line/04-remote-repositories/01-introduction/basic-remote-workflow.png)
 
-Image there's 2 developers working on a project. Between them the remote is the connection between the 2. The remote contains the history of what both developers have done to the project.
+Imagine there's 2 developers working on a project. Between them the remote is the connection between the 2. The remote contains the history of what both developers have done to the project. Thus both developers can compare their changes to one another using git diff. Let's say we're both working on the same branch (please don't but for arguments sake).
+
+Both developers can make commits and change the history, when committing and pushing; if your history doesn't match the remote you will be rejected! This is because you're changing the history! And what I mean by that is you are removing someone else's work! To avoid this in this scenario we can do a comparison with the remote rather than our local history. To do this you can do 
+
+```bash
+git diff master -- remote/origin/master
+```
+
+This will show you the difference with changes. However it will not show you the different in your history! To do that you can use `git status`. If you see something like:
+
+```bash
+Your branch is behind by 1 commits
+```
+
+Oh no! The other developer committed before you could! We can fix this though! Using the stash ;) in order to use the stash we need to make sure our changes are not staged. So we can use `git reset` to take things out of the stage. Once we've done this we can use the stash!
 
 ## Stash 
+
+The stash is like a 'cache' for your local. Stashing means you've taken your changes and 'saved' them somewhere else. Usually in order to pull on the remote. (based on the scenario above where another developer has committed on your branch and your local is now behind).
+
+```bash
+git stash
+```
+
+Be careful with with stash! I'm not 100% on using it and I believe from experience it will only stash one set of changes. So you can only use it once. 
+
+I commonly use this combination to update my local with a remote:
+
+```bash
+git stash 
+git pull
+git stash apply
+```
+
+[alt git stash](https://cms-assets.tutsplus.com/uploads/users/585/posts/22988/image/git-stash-stashing-changes.png)
