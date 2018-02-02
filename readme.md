@@ -217,3 +217,16 @@ Another way of looking at it is like a tree. As we code the tree grows!
 ## Git terminology 
 
 https://git-scm.com/docs/gitglossary
+
+
+## Composer and package in git?
+
+As developers we daily require third party packages into our code to save time writing the same shit again and again. I know I'd get so bored! So we add packages like symfony, and laravel etc. We install them via composer! When there's more than one developer we need our requirements of our project to be included on both developer's machines in order for their application to work! 
+
+![alt composer.lock](https://image.slidesharecdn.com/usingcomposerwithwordpress-160320130652/95/using-composer-with-wordpress-42-638.jpg?cb=1458479318)
+
+So lets say we require a new package called `Zizaco/Entrust` into laravel and we add the ServiceProvider into our config and commit it. How does all the other developer on this project know to download the package? He doesn't! You did the work! How dare you ruin his day and expect him to know he now has to download this new package so he can test his code! You Bastard! It's cool. Composer has this covered! 
+
+Whenever we create a composer project, composer will generate a `composer.lock` file. A lock file is used to store a list of projects and their commit hashes in order to download the exact code of that third party! So if you require a new package! Please add `composer.lock` to the history! So another developer can download what's required to run the application! Thanks baby girl! 
+
+This is the same with `package.lock` and npm/yarn.
