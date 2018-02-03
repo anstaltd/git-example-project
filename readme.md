@@ -1,7 +1,7 @@
 Git example project 
 ===
 
-Hello Developer! 
+Hello Developer! In this repo I've provided an explanation on how we use git at Ansta. Feel free to make an absolute mess with this repo and experiment with git! Just don't touch the readme ;) 
 
 ## Rebasing and conflicts 
 
