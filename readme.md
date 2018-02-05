@@ -230,3 +230,10 @@ So lets say we require a new package called `Zizaco/Entrust` into laravel and we
 Whenever we create a composer project, composer will generate a `composer.lock` file. A lock file is used to store a list of projects and their commit hashes in order to download the exact code of that third party! So if you require a new package! Please add `composer.lock` to the history! So another developer can download what's required to run the application! Thanks baby girl! 
 
 This is the same with `package.lock` and npm/yarn.
+
+## Add new remote 
+```
+git init 
+git remote add origin https://github.com:anstaltd/my-project
+git pull
+```
